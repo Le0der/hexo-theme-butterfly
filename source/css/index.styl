@@ -13,3 +13,7 @@ if hexo-config('css_prefix')
 
 // search
 @import '_search/index'
+
+// 灯笼
+if hexo-config('lantern') && hexo-config('lantern.enable')
+  @import './lantern.css'
