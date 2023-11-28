@@ -35,12 +35,15 @@ mixin rightsideItem(array)
       when 'share'
         button.share(type="button" title='分享链接' onclick="share()")
           i.fas.fa-share-nodes
+      when 'mouse'
+        button.share(type="button" title='右键模式' onclick="changeMouseMode()")
+          i.fas.fa-mouse
 
 #rightside
   - const { enable, hide, show } = theme.rightside_item_order
-  - const hideArray = enable ? hide && hide.split(',') : ['readmode','translate','darkmode','hideAside']
+  - const hideArray = enable ? hide && hide.split(',') : ['translate','darkmode','hideAside','mouse'] //'readmode','translate','darkmode','hideAside','mouse'
   //- const showArray = enable ? show && show.split(',') : ['toc','chat','comment']
-  - const showArray = enable ? show && show.split(',') : ['chat','share','comment','hideAside','toc']
+  - const showArray = enable ? show && show.split(',') : ['toc', 'chat','share','comment']
 
   
   #rightside-config-hide
